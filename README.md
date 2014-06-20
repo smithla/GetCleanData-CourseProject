@@ -30,8 +30,11 @@ Course project repo for Getting and Cleaning Data class. Cousera.
   - ./test/X_test.txt
   - ./train/X_train.txt
       
- Part 2 - Combine the Y train and Y test columns to the test and train data
-
+ Part 2 - Combine the Y train and Y test columns to the test and train data. 
+          Y test and Y train are the activity numbers (1-6) that correspond to the activities.
+          This step binds the activity number to it's corresponding test
+ 
+ Part 3 -
 
 
 #### The Readme from the original dataset is below
