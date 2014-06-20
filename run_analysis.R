@@ -28,7 +28,8 @@
 library(data.table)
 library(reshape2)
 library(plyr)
-# Part 1 - Read in the data from files
+
+# Part 1 - Read in the data files needed for the dataset transformation 
 
 # read activity labe1s
 dactivity <- read.table("activity_labels.txt")
@@ -65,6 +66,9 @@ colnames(dtrain)[1] <- "Subject_Number"
 # rename the activity column
 colnames(dactivity)[1] <- "Activity_Number"
 
+# Part 3 merge the Activity Labels with the tesing and training data and then 
+#  merge both sets together
+
 ###########################################################################
 ### Step 3: Uses descriptive activity names to name the activities in the data set
 # merge the activity label with the test and training data
@@ -92,6 +96,7 @@ colnames(dtotal)[names(dtotal) == "V2.x"] <- "Activity_Label"
 # At this point, I am creating a features dataset that can be fileterd to get
 # only the Mean and STD features
 
+# Part 4 - Clean up the features and filter the dataset
 # read in the features
 dfeatures <- read.table("./features.txt",stringsAsFactors=FALSE)
 
@@ -116,7 +121,7 @@ dfeatures$V2 <- gsub(",","_",dfeatures$V2)
 ###########################################################################################
 ### Step 4: Appropriately labels the data set with descriptive variable names. 
 ### I am choosing to replace the code prefixes "t" with "Time_ and the "f" with "Freq_"
-### Please see the readme file for further explaination/justification
+### Please see the code book for further explaination/justification
 dfeatures$V2 <- gsub("^t","Time_",dfeatures$V2)
 dfeatures$V2 <- gsub("^f","Freq_",dfeatures$V2)
 ###########################################################################################
@@ -149,6 +154,7 @@ dfeatures_mean_std <- subset(dfeatures_mean_std,!grepl("meanFreq",dfeatures_mean
 
 dfeatures_mean_std <- dfeatures_mean_std[order(dfeatures_mean_std[,1]),]
 
+# Part 5 Use the cleaned features to filter the dataset
 # check
 head(dfeatures_mean_std,68)
 str(dfeatures_mean_std)
@@ -172,19 +178,21 @@ nrow(d_feature_final)
 
 str(d_feature_final)
 
-# Use melt and dcast to create the tidy dataset
+# Part 6 Use melt and dcast to reshape the data into the tidy dataset
 
+# Use melt and dcast to create the tidy dataset
 melted <- melt(d_feature_final,id=1:3)
-#melted2 <- arrange(melted,Subject_Number,Activity_Label)
+
 ######################################################################################
 ### Step 5: Creates a second, independent tidy data set with the average of each variable for each activity and each subject
 tidy_final <- dcast(melted,Activity_Number+Activity_Label+Subject_Number~variable,fun.aggregate = mean)
 ######################################################################################
 
 # Write the tidy dataset to a file
-write.csv(tidy_final,file="./tidy_data.csv",row.names=F)
+write.csv(tidy_final,file="./tidy_data.txt",row.names=F)
 
 # Check
 str(tidy_final)
 head(tidy_final)
 tail(tidy_final)
+
