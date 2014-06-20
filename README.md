@@ -20,9 +20,23 @@ Course project repo for Getting and Cleaning Data class. Cousera.
  The script to run is run_analysis.R
  It is broken down into 5 steps, which are clearly marked in the comments of the R file. This script MUST be run from the  UCI HAR Dataset folder
  
- Part 1 - Read in the data files needed for the dataset transformation 
+ The project has 5 steps. Each of them are well marked in the code comments. They are not done
+ in the order shown below due. For example, it is simpler to add discriptive names before merging the testing and training sets.
+ 
+   1) Merges the training and the test sets to create one data set.
+   2) Extracts only the measurements on the mean and standard deviation for each measurement.
+   3) Uses descriptive activity names to name the activities in the data set
+   4) Appropriately labels the data set with descriptive variable names.
+   5) Creates a second, independent tidy data set with the average of each variable for each activity and each subject.
+
+
+ 
+ There are # parts to the code. In some of the parts, t
+ 
+ Part 1 Read in the data files needed for the dataset transformation
       This section used the following files:
-  - activity_labels.txt
+  -  features.txt
+  -  activity_labels.txt
   - ./test/Y_tests.txt
   - ./train/Y_train.txt
   - ./test/subject_test.txt
@@ -30,11 +44,31 @@ Course project repo for Getting and Cleaning Data class. Cousera.
   - ./test/X_test.txt
   - ./train/X_train.txt
       
- Part 2 - Combine the Y train and Y test columns to the test and train data. 
-          Y test and Y train are the activity numbers (1-6) that correspond to the activities.
-          This step binds the activity number to it's corresponding test
+ Part 2 Combine the Y train and Y test columns to the test and train data.
+      Y test and Y train are the activity numbers (1-6) that correspond to the activities.
+      This step binds the activity number to it's corresponding test. As the colums are added
+      the names are changed to Activity Number
  
- Part 3 -
+ Part 3 merge the Activity Labels with the tesing and training data and then
+   merge both sets together.Also, renaming of columns that were     changed durning the merge process. At the end of this    step, we have dtotal, the complete merged dataset.
+ 
+ Part 4 Clean up the features and filter the dataset
+  - read in the features
+  - add 3 new features: Activity_Number,Activity_Name and Subject_Name
+  - Clean up the features, Remove parenthesis and replace dates with underscores
+  - Replace the prefixes "t" and "f" with "Time_" and "Freq_"
+  - Filter out any column that is not an activity,subject, mean or standard devation.
+  - Filter out any column that has the character string "meanFreq"
+
+  Part 5 Use the cleaned features to filter the dataset
+  - use the index of the features dataset to grab the correct rows from the test/train data
+  - use the labels of the features dataset to rename the columns of the test/train data
+  
+  Part 6 Use melt and dcast to reshape the data into the tidy dataset
+  - melt/dcast/reshape
+  - write the file tidy_data.csv to the working directory
+  
+  End of code walk through
 
 
 #### The Readme from the original dataset is below
