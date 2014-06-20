@@ -73,7 +73,7 @@ Course project repo for Getting and Cleaning Data class. Cousera.
    melt/dcast/reshape
    write the file tidy_data.csv to the working directory
   
-  End of code walk through
+  **End of code walk through**
 
 #### The Readme from the original dataset is below
  
