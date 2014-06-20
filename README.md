@@ -30,7 +30,7 @@ Course project repo for Getting and Cleaning Data class. Cousera.
   - ./test/X_test.txt
   - ./train/X_train.txt
       
-
+ Part 2 - Combine the Y train and Y test columns to the test and train data
 
 
 
