@@ -31,10 +31,10 @@ Course project repo for Getting and Cleaning Data class. Cousera.
 
 
  
- There are # parts to the code. In some of the parts, t
+ There are # parts to the code. In some of the parts, 
  
  Part 1 Read in the data files needed for the dataset transformation
-      This section used the following files:
+      This section used the following files
   -  features.txt
   -  activity_labels.txt
   - ./test/Y_tests.txt
@@ -45,9 +45,9 @@ Course project repo for Getting and Cleaning Data class. Cousera.
   - ./train/X_train.txt
       
  Part 2 Combine the Y train and Y test columns to the test and train data.
-      Y test and Y train are the activity numbers (1-6) that correspond to the activities.
-      This step binds the activity number to it's corresponding test. As the colums are added
-      the names are changed to Activity Number
+   Y test and Y train are the activity numbers (1-6) that correspond to the activities.
+   This step binds the activity number to it's corresponding test. As the colums are added
+   the names are changed to Activity Number
  
  Part 3 merge the Activity Labels with the tesing and training data and then
    merge both sets together.Also, renaming of columns that were     changed durning the merge process. At the end of this    step, we have dtotal, the complete merged dataset.
