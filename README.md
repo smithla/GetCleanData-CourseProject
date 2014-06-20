@@ -31,9 +31,9 @@ Course project repo for Getting and Cleaning Data class. Cousera.
 
 
  
- There are # parts to the code. In some of the parts, 
+ There are 6 parts to the code. In some of the parts, 
  
- Part 1 Read in the data files needed for the dataset transformation
+ 1) Read in the data files needed for the dataset transformation
       This section used the following files
   -  features.txt
   -  activity_labels.txt
@@ -44,15 +44,15 @@ Course project repo for Getting and Cleaning Data class. Cousera.
   - ./test/X_test.txt
   - ./train/X_train.txt
       
- Part 2 Combine the Y train and Y test columns to the test and train data.
+ 2) Combine the Y train and Y test columns to the test and train data.
    Y test and Y train are the activity numbers (1-6) that correspond to the activities.
    This step binds the activity number to it's corresponding test. As the colums are added
    the names are changed to Activity Number
  
- Part 3 merge the Activity Labels with the tesing and training data and then
+ 3) Merge the Activity Labels with the tesing and training data and then
    merge both sets together.Also, renaming of columns that were     changed durning the merge process. At the end of this    step, we have dtotal, the complete merged dataset.
  
- Part 4 Clean up the features and filter the dataset
+ 4) Clean up the features and filter the dataset
   - read in the features
   - add 3 new features: Activity_Number,Activity_Name and Subject_Name
   - Clean up the features, Remove parenthesis and replace dates with underscores
@@ -60,11 +60,11 @@ Course project repo for Getting and Cleaning Data class. Cousera.
   - Filter out any column that is not an activity,subject, mean or standard devation.
   - Filter out any column that has the character string "meanFreq"
 
-  Part 5 Use the cleaned features to filter the dataset
+  5) Use the cleaned features to filter the dataset
   - use the index of the features dataset to grab the correct rows from the test/train data
   - use the labels of the features dataset to rename the columns of the test/train data
   
-  Part 6 Use melt and dcast to reshape the data into the tidy dataset
+  6) Use melt and dcast to reshape the data into the tidy dataset
   - melt/dcast/reshape
   - write the file tidy_data.csv to the working directory
   
