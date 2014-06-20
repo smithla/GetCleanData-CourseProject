@@ -22,13 +22,13 @@ Course project repo for Getting and Cleaning Data class. Cousera.
  
  Part 1 - Read in the data files needed for the dataset transformation 
       This section used the following files:
-      - activity_labels.txt
-      - ./test/Y_tests.txt
-      - ./train/Y_train.txt
-      - ./test/subject_test.txt
-      - ./train/submect_train.txt
-      - ./test/X_test.txt
-      - ./train/X_train.txt
+  - activity_labels.txt
+  - ./test/Y_tests.txt
+  - ./train/Y_train.txt
+  - ./test/subject_test.txt
+  - ./train/submect_train.txt
+  - ./test/X_test.txt
+  - ./train/X_train.txt
       
 
 
